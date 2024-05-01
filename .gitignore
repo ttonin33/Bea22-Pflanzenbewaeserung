@@ -1,3 +1,10 @@
+# VS Code & PlatforIO
+.idea
+.vscode
+.pio
+.pioenvs
+.piolibdeps
+
 # Prerequisites
 *.d
 
