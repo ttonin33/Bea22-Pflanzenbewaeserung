@@ -4,6 +4,7 @@
 .pio
 .pioenvs
 .piolibdeps
+secrets.h
 
 # Prerequisites
 *.d
