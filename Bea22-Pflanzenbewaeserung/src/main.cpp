@@ -25,7 +25,7 @@ void upload(String body)
   HTTPClient http;
   http.begin("https://api.axiom.co/v1/datasets/esp/ingest");
   http.addHeader("Content-Type", "application/json");
-  http.addHeader("Authorization", "Bearer xaat-6268ec0b-04a2-45e2-80c4-e0fb9571db21");
+  http.addHeader("Authorization", axiom_secret);
 
   String httpRequestData = body;
 
