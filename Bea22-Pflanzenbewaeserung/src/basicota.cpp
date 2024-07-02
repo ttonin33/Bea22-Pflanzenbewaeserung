@@ -1,19 +1,3 @@
-// [env:esp32]
-// platform = espressif32
-// board = esp32dev
-// framework = arduino
-// lib_deps = 
-// 	plerup/EspSoftwareSerial@^8.2.0
-// 	ayushsharma82/WebSerial @ ^1.1.0
-// 	me-no-dev/AsyncTCP@^1.1.1
-// 	esphome/ESPAsyncWebServer-esphome@^3.1.0
-// 	cotestatnt/esp-fs-webserver@^1.0.6
-// 	cotestatnt/AsyncEspFsWebserver@^1.0.5
-// 	wollewald/INA219_WE@^1.3.7
-// 	bblanchon/ArduinoJson@^6.21.3
-// monitor_speed = 115200
-
-
 #include <WiFi.h>
 #include <ESPmDNS.h>
 #include <WiFiUdp.h>
@@ -23,15 +7,14 @@
 #include <DNSServer.h>
 #include <Wire.h>
  
-const char *ssid = "..........";
-const char *password = "..........";
+#include "secrets.h"
 
 void setup()
 {
     Serial.begin(115200);
     Serial.println("Booting");
     WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
     while (WiFi.waitForConnectResult() != WL_CONNECTED)
     {
         Serial.println("Connection Failed! Rebooting...");
@@ -39,11 +22,8 @@ void setup()
         ESP.restart();
     }
 
-    // Port defaults to 3232
-    // ArduinoOTA.setPort(3232);
-
     // Hostname defaults to esp3232-[MAC]
-    // ArduinoOTA.setHostname("myesp32");
+    ArduinoOTA.setHostname("ESP32-Plfanze");
 
     // No authentication by default
     // ArduinoOTA.setPassword("admin");
