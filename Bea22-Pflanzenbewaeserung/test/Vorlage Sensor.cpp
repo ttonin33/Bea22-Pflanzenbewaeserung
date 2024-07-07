@@ -6,8 +6,6 @@
 #include "ArduinoJson.h" // https://arduinojson.org/
 // #include <AsyncFsWebServer.h> // https://github.com/cotestatnt/async-esp-fs-webserver
 #include "ESPAsyncWebServer.h"
-
-
 #include "secrets.h"
 
 #define SensorPin 35
