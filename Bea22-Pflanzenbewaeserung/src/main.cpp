@@ -7,6 +7,7 @@
 #include <DNSServer.h>
 #include <Wire.h>
 #include "ArduinoJson.h" // https://arduinojson.org/
+#include <HTTPClient.h>
 #include "secrets.h"
 
 //! Variablen
@@ -33,6 +34,19 @@ String getTime() //* String: Unix
 
 void upload(String body)
 {
+  HTTPClient http;
+  http.begin("https://api.axiom.co/v1/datasets/esp/ingest");
+  http.addHeader("Content-Type", "application/json");
+  http.addHeader("Authorization", axiom_secret);
+
+  String httpRequestData = body;
+
+  int httpResponseCode = http.POST(httpRequestData);
+
+  // Serial.print("HTTP Response code: ");
+  // Serial.println(httpResponseCode);
+
+  http.end();
 }
 
 void setup()
