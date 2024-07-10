@@ -1,3 +1,5 @@
+// https://wolf-u.li/flashen-des-wt32-eth01-ein-esp32-mit-lan-wifiwlan/
+
 #include <WiFi.h>
 #include <ESPmDNS.h>
 #include <WiFiUdp.h>
@@ -10,13 +12,20 @@
 #include <HTTPClient.h>
 #include "secrets.h"
 
-//! Variablen
-#define SensorPin 35     // ADC für Sensor
+//! Variablen Test
+#define SensorPin 34     // ADC für Sensor
 #define Pumpe 5          // Ausgang für Pumpe
+// int Pumpe_Zeit = 2000;   // Aktive Zeit der Pumpe
+// int Pumpe_Pause = 30000;  // Pause nach Wasserpumpen
+// int Sensor_Pause = 15000; // Pause nach Sensormessung
+float wasser_soll = 1600; // Sensorwert ab wann bewäsert werden soll
+
+
+//! Variablen Depl
+
 int Pumpe_Zeit = 1000;   // Aktive Zeit der Pumpe
 int Pumpe_Pause = 1000;  // Pause nach Wasserpumpen
 int Sensor_Pause = 1000; // Pause nach Sensormessung
-float wasser_soll = 100; // Sensorwert ab wann bewäsert werden soll
 
 String getTime() //* String: Unix
 {
