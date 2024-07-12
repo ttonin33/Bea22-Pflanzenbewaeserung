@@ -1,18 +1,18 @@
 #include <Arduino.h>
 
 //! Variablen Test
-#define SensorPin A1 // ADC für Sensor
+#define SensorPin A5 // ADC für Sensor
 #define Pumpe 5      // Ausgang für Pumpe
-// int Pumpe_Zeit = 2000;   // Aktive Zeit der Pumpe
-// int Pumpe_Pause = 30000;  // Pause nach Wasserpumpen
-// int Sensor_Pause = 15000; // Pause nach Sensormessung
-float wasser_soll = 500; // Sensorwert ab wann bewäsert werden soll
+// int Pumpe_Zeit = 1500;         // Aktive Zeit der Pumpe
+// long Pumpe_Pause = 1800000;  // Pause nach Wasserpumpen
+// long Sensor_Pause = 600000; // Pause nach Sensormessung
+float wasser_soll = 600; // Sensorwert ab wann bewäsert werden soll
 
 //! Variablen Depl
 
-int Pumpe_Zeit = 1000;   // Aktive Zeit der Pumpe
+int Pumpe_Zeit = 1500;    // Aktive Zeit der Pumpe
 int Pumpe_Pause = 1000;  // Pause nach Wasserpumpen
-int Sensor_Pause = 1000; // Pause nach Sensormessung
+int Sensor_Pause = 500; // Pause nach Sensormessung
 
 void setup()
 {
